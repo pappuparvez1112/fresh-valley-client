@@ -10,6 +10,9 @@ import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
 import NavBar from './Components/NavBar/NavBar';
 
+import AddProduct from './Components/AddProduct/AddProduct';
+import Add from './Components/Add/Add';
+
 
 function App() {
   return (
@@ -20,6 +23,13 @@ function App() {
         <Switch>
           <Route path="/home">
             <Home />
+          </Route>
+          
+          <Route path="/addProduct">
+            <AddProduct />
+          </Route>
+          <Route path="/add">
+            <Add />
           </Route>
           <Route exact path="/">
             <Home />
