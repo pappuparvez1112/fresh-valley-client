@@ -6,6 +6,8 @@ const SideBar = () => {
         <div style={{backgroundColor:"darkgrey",height:"800px"}} className="m-5 p-5 ">
         
         <Link to="/add"><h3 >Manage Product</h3></Link>
+        <br />
+        <br />
         <Link to="/addProduct"><h3>Add product</h3></Link>
         
 

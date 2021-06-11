@@ -1,12 +1,21 @@
-import React from 'react';
-import productData from "../FakeData/FakeData.json"
+import React, { useEffect, useState } from 'react';
+
 import Product from '../Product/Product';
 
 const TotalProducts = () => {
+    const [products,setProducts]=useState([]);
+
+    useEffect(()=>{
+        fetch('http://localhost:5500/products')
+        .then(res=>res.json())
+        .then(data=>setProducts(data))
+
+
+    },[])
     return (
         <div className="row">
             {
-                productData.map(p=> <Product product={p}></Product> )
+                products.map(p=> <Product product={p}></Product> )
             }
         </div>
     );

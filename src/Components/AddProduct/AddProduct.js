@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 import SideBar from '../SideBar/SideBar';
@@ -7,7 +7,31 @@ import axios from 'axios';
 
 const AddProduct = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+   
+    const [imageURL,setImageURL]=useState(null);
+
+  const onSubmit = data => {
+    const productData={
+      name:data.name,
+      imageURL:imageURL,
+      price:data.price
+    }
+    console.log(data);
+    
+   
+
+    const url=`http://localhost:5500/addProduct`;
+
+    console.log(productData)
+    fetch(url,{
+      method:'post',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(productData)
+    })
+    .then(res=>console.log('server side response',res))
+  };
   const handleImageUpload=product=>{
       console.log(product.target.files[0]);
       const imageData=new FormData();
@@ -17,7 +41,7 @@ const AddProduct = () => {
       axios.post('https://api.imgbb.com/1/upload', 
         imageData)
       .then(function (response) {
-        console.log(response.data.data.display_url);
+        setImageURL(response.data.data.display_url);
       })
       .catch(function (error) {
         console.log(error);
@@ -35,7 +59,12 @@ const AddProduct = () => {
                     <h3 className="text-center m-5">Add new product</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
       
-                  <input defaultValue="test" {...register("example")} />
+                  <input
+                  defaultValue="New exciting product" {...register("name")} />
+                  <br />
+                  <br />
+                  <input
+                  type="text" placeholder="price" {...register("price")} />
                   <br />
                   <br />
       
