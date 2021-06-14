@@ -18,13 +18,13 @@ const NavBar = () => {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item me-5">
-          <a className="nav-link active" aria-current="page" href="/">Orders</a>
+          <Link className="nav-link active" aria-current="page" to="/order" >Orders</Link>
         </li>
         <li className="nav-item me-5">
-          <a className="nav-link active" aria-current="page" href="/">Product</a>
+          <a className="nav-link active" aria-current="page" href="/">shop</a>
         </li>
         <li className="nav-item me-5">
-          <a className="nav-link active" aria-current="page" href="/"><button className="btn btn-primary">Log In</button></a>
+          <Link className="nav-link active" aria-current="page" to="/login"><button className="btn btn-primary">Log In</button></Link>
         </li>
         <li className="nav-item me-5">
           <Link  className="nav-link active" aria-current="page" to="/add"><button className="btn btn-success" >Admin</button></Link>
