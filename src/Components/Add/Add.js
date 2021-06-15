@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
+import Submit from '../Submit/Submit';
 
 
 const Add = () => {
+    const [registration,setRegistration]=useState([]);
+
+    useEffect(()=>{
+        fetch(`http://localhost:5500/orders`)
+        .then(res=>res.json())
+        .then(data=>setRegistration(data))
+
+    },[])
     return (
         <div className="container">
             <div className="row">
@@ -20,14 +29,15 @@ const Add = () => {
                             <th>Product Name</th>
                             <th>Email</th>
                             <th>Price</th>
-                            <th>Add date</th>
+                            
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            
-                        }
+                      {
+                           registration.map(count=><Submit count={count} ></Submit>)
+                       }  
+                       
                     </tbody>
                 </table>
 

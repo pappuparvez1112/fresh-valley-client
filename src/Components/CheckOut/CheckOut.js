@@ -15,7 +15,9 @@ const CheckOut = () => {
     
     // console.log(product);
     const [submitData,setSubmitData]=useState({
+        userName:user.name,
         userEmail:user.email,
+        
         // productName:product.name,
         // price:product.price,
     });
@@ -50,6 +52,7 @@ const CheckOut = () => {
             const newSubmitData={...submitData}
             newSubmitData.productName=data.name
             newSubmitData.price=data.price
+            newSubmitData.img=data.imageURL
             setSubmitData(newSubmitData)
         })
     },[])

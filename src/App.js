@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={[LoggedInUser,setLoggedInUser]}>
-      <h3 style={{color:"WindowFrame"}}> name:{LoggedInUser.name}</h3>
+      <h3 style={{color:"WindowFrame"}}> Log in:{LoggedInUser.name}</h3>
       <Router>
         <NavBar/>  
         <Switch>
@@ -46,9 +46,9 @@ function App() {
           <Route path="/addProduct">
             <AddProduct />
           </Route>
-          <Route path="/add">
+          <PrivateRoute path="/add">
             <Add />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <LogIn/>
             
@@ -59,8 +59,8 @@ function App() {
 
           </PrivateRoute>
 
-          <PrivateRoute path="/order"  >
-           <CheckOut/>
+          <PrivateRoute path="/orders"  >
+           <OrderPlace/>
             
           </PrivateRoute>
          
