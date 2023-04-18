@@ -55,7 +55,7 @@ const CheckOut = () => {
             newSubmitData.img=data.imageURL
             setSubmitData(newSubmitData)
         })
-    },[])
+    },[id, submitData]);
 
    
     return (

@@ -11,7 +11,7 @@ const TotalProducts = () => {
         .then(data=>setProducts(data))
 
 
-    },[])
+    },[]);
     return (
         <div className="row">
             {

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
    
     const [imageURL,setImageURL]=useState(null);
 

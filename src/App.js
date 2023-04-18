@@ -16,7 +16,7 @@ import LogIn from './Components/LogIn/LogIn';
 import OrderPlace from "./Components/OrderPlace/OrdersPlace";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import CheckOut from "./Components/CheckOut/CheckOut";
-import Submit from "./Components/Submit/Submit";
+
 
 
 export const UserContext=createContext();

@@ -10,7 +10,7 @@ const OrdersPlace = () => {
         fetch(`http://localhost:5500/orders/${user.email}`)
         .then(res=>res.json())
         .then(data=>setMyOrder(data))
-    },[])
+    },[user.email])
     return (
         <div> 
             {
