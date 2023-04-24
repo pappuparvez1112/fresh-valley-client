@@ -14,7 +14,7 @@ const Submit = (props) => {
         .then(res=>res.json())
         .then(data=>{
             alert('your information is successfully delete')
-              history.replace('/');
+              history.replace('/add');
         });
     }
          

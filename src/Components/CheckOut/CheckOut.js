@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
-import OrderPlace from '../OrderPlace/OrdersPlace';
+import { useHistory, useParams } from 'react-router-dom';
+
 
 const CheckOut = () => {
 
@@ -9,36 +9,29 @@ const CheckOut = () => {
     const [product,setProduct]=useState({});
     const user=JSON.parse(localStorage.getItem('user'));
     // console.log(user);
-    
 
-    
-    
-    // console.log(product);
     const [submitData,setSubmitData]=useState({
         userName:user.name,
         userEmail:user.email,
-        
-        // productName:product.name,
-        // price:product.price,
     });
-    const hadleChange=(event)=>{
+    const handleChange=(event)=>{
         const newSubmitData={...submitData}
         newSubmitData.address=event.target.value;
         setSubmitData(newSubmitData);
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-
         fetch('http://localhost:5500/addOrder',{
             method:'post',
             headers:{'Content-Type':'application/json'},
-            body:JSON.stringify(submitData)
+            body:JSON.stringify(submitData),
         })
         .then(res=>res.json())
         .then(data=>{
-            alert('your order successfully done')
-            history.replace('/');
+            console.log(data);  
         })
+        alert('your order successfully done')
+        history.replace('/add');
        
         
         // console.log(submitData);
@@ -64,7 +57,7 @@ const CheckOut = () => {
 
                 <form className="form-control m-5 " onSubmit={handleSubmit}>
                 <h3 className="mb-3">Place the order</h3>
-                <input className="form-control text-center " onChange={hadleChange} name="adress" type="text"  placeholder="Write your Adress" /><br />
+                <input className="form-control text-center " onChange={handleChange} name="adress" type="text"  placeholder="Write your Adress" /><br />
                      <input  className="form-control text-center" type="Email" name="userEmail" placeholder="userEmail" value={user.email}/>
                      <br />
                      <input className="form-control text-center" type="text" name="productName" placeholder="productName" value={product.name}/><br />
