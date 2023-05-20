@@ -59,10 +59,10 @@ function App() {
 
           </PrivateRoute>
 
-          <PrivateRoute path="/orders"  >
+          <Route path="/orders"  >
            <OrderPlace/>
             
-          </PrivateRoute>
+          </Route>
          
           
           
