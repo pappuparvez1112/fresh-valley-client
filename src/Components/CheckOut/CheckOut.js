@@ -21,7 +21,7 @@ const CheckOut = () => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        fetch('http://localhost:5500/addOrder',{
+        fetch('https://fresh-valley-server-site-pappuparvez1112.vercel.app/addOrder',{
             method:'post',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(submitData),
@@ -31,14 +31,14 @@ const CheckOut = () => {
             console.log(data);  
         })
         alert('your order successfully done')
-        history.replace('/add');
+        history.replace('/orders');
        
         
         // console.log(submitData);
 
     }
     useEffect(()=>{
-        fetch(`http://localhost:5500/products/${id}`)
+        fetch(`https://fresh-valley-server-site-pappuparvez1112.vercel.app/products/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setProduct(data);

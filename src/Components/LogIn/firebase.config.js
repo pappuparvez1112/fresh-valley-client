@@ -1,6 +1,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyCvMIorHvVe_JMJwPh0-1uV8VDES0Mwm9o",
-    authDomain: "fresh-valley-01.firebaseapp.com",
+    authDomain: "fresh-valley-client-site.vercel.app",
+    // authDomain: "fresh-valley-01.firebaseapp.com",
     projectId: "fresh-valley-01",
     storageBucket: "fresh-valley-01.appspot.com",
     messagingSenderId: "338369787721",

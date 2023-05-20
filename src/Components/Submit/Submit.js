@@ -7,14 +7,14 @@ const Submit = (props) => {
     const {_id,productName,userEmail,price}=props.count;
     
     const handleDelete=()=>{
-        fetch(`http://localhost:5500/deleteorder/${_id}`,{
+        fetch(`https://fresh-valley-server-site-pappuparvez1112.vercel.app/deleteorder/${_id}`,{
             method:'DELETE',
 
         })
         .then(res=>res.json())
         .then(data=>{
             alert('your information is successfully delete')
-              history.replace('/add');
+              history.replace('/');
         });
     }
          

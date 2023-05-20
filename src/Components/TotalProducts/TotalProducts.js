@@ -6,7 +6,7 @@ const TotalProducts = () => {
     const [products,setProducts]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5500/products')
+        fetch('https://fresh-valley-server-site-pappuparvez1112.vercel.app/products')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[]);

@@ -8,7 +8,7 @@ const Add = () => {
     const [registration,setRegistration]=useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5500/orders`)
+        fetch(`https://fresh-valley-server-site-pappuparvez1112.vercel.app/orders`)
         .then(res=>res.json())
         .then(data=>setRegistration(data))
 

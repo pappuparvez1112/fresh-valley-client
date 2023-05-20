@@ -7,7 +7,7 @@ const OrdersPlace = () => {
     const user=JSON.parse(localStorage.getItem('user'));
     const[myorder,setMyOrder]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5500/orders/${user.email}`)
+        fetch(`https://fresh-valley-server-site-pappuparvez1112.vercel.app/orders/${user.email}`)
         .then(res=>res.json())
         .then(data=>setMyOrder(data))
     },[user.email])

@@ -20,7 +20,7 @@ const AddProduct = () => {
     
    
 
-    const url=`http://localhost:5500/addProduct`;
+    const url=`https://fresh-valley-server-site-pappuparvez1112.vercel.app/addProduct`;
 
     console.log(productData)
     fetch(url,{
